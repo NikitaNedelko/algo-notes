@@ -12,36 +12,32 @@
 
 
 def main():
-    n, m = map(int, input().split())  # размеры поля
-    k = int(input())  # количество снимков
+    """Точка входа в программу"""
+    _, _ = map(int, input().split())
+    N = int(input())
 
-    # координаты снимков: список прямоугольников
-    snapshots: list[tuple[int, int, int, int]] = []
-    for _ in range(k):
+    photos: list[tuple[int, int, int, int]] = []
+    for _ in range(N):
         x1, y1, x2, y2 = map(int, input().split())
-        snapshots.append((x1, y1, x2, y2))
+        photos.append((x1, y1, x2, y2))
 
-    # начальные возможные позиции: все клетки первого прямоугольника
     current_positions: set[tuple[int, int]] = set()
-    x1, y1, x2, y2 = snapshots[0]
+    x1, y1, x2, y2 = photos[0]
     for x in range(x1, x2 + 1):
         for y in range(y1, y2 + 1):
             current_positions.add((x, y))
 
-    # переход по каждому снимку начиная со второго
-    for snap in snapshots[1:]:
-        x1, y1, x2, y2 = snap
+    for photo in photos[1:]:
+        x1, y1, x2, y2 = photo
         next_positions: set[tuple[int, int]] = set()
 
         for x, y in current_positions:
-            for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:  # 4 направления
+            for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
                 nx, ny = x + dx, y + dy
 
-                # Проверка границ снимка и поля
                 if x1 <= nx <= x2 and y1 <= ny <= y2:
                     next_positions.add((nx, ny))
 
-        # если нет куда идти — сразу "NO"
         if not next_positions:
             print("NO")
             return
