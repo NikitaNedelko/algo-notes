@@ -9,13 +9,15 @@
 def main():
     """Точка входа в программу"""
     N = int(input())
-    nums = list(map(int, input().split()))
+    arr = list(map(int, input().split()))
     K = int(input())
 
     # расширяем массив до ближайшей степени двойки и выделяем место для дерева
     new_len = 1 << (N - 1).bit_length()
-    nums = (
-        (new_len - 1) * [0] + [1 if i == 0 else 0 for i in nums] + [0] * (new_len - N)
+    nums: list[list[int]] = (
+        [[0, 0]] * (new_len - 1)
+        + [[id, id] if num == 0 else [0, 0] for id, num in enumerate(arr)]
+        + [[0, 0]] * (new_len - N)
     )
 
     # заполняем узлы дерева
