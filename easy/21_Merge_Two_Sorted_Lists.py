@@ -30,11 +30,11 @@ class Solution(object):
         return merged_list.next
 
 
-if __name__ == "__main__":
-    solution = Solution()
-    nums1 = list(map(int, input().split()))
-    nums2 = list(map(int, input().split()))
-    print(solution.mergeTwoLists(nums1, nums2))
+# if __name__ == "__main__":
+#     solution = Solution()
+#     nums1 = list(map(int, input().split()))
+#     nums2 = list(map(int, input().split()))
+#     print(solution.mergeTwoLists(nums1, nums2))
 
 """
 1 2 4 5 6 7 9 10
