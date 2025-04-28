@@ -22,30 +22,41 @@ class TreeNode(object):
 
 class Solution(object):
 
-    def invert(self, node: Optional[TreeNode]):
+    def invert_recursion(self, node: Optional[TreeNode]):
+        """Обход BFS через рекурсию"""
         if node is None:
             return None
         node.left, node.right = node.right, node.left
-        self.invert(node.right)
-        self.invert(node.left)
+        self.invert_recursion(node.right)
+        self.invert_recursion(node.left)
         return node
+
+    def invert_queue(self, root: Optional[TreeNode]):
+        """Обход BFS через очередь цикл"""
+        if root is None:
+            return None
+
+        queue = [root]
+        while queue:
+            node = queue.pop(0)
+
+            node.left, node.right = node.right, node.left
+
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+        return root
 
     def invertTree(self, root: TreeNode):
         """
         :type root: Optional[TreeNode]
         :rtype: Optional[TreeNode]
         """
-        self.invert(root)
+        self.invert_queue(root)
         return root
 
 
 if __name__ == "__main__":
     print("")
-
-"""
-1 2 4 5 6 7 9 10
-2 8 12
-
-1 2 4
-1 3 4
-"""
