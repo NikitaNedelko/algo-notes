@@ -16,15 +16,33 @@ class TreeNode:
 
 class Solution(object):
 
-    def maxDepth(self, root: TreeNode):
+    def maxDepth_recursion(self, root: TreeNode) -> int:
         """нахождение максимальной глубины DFS через рекурсию"""
+        if not root:
+            return 0
+        return 1 + max(
+            self.maxDepth_recursion(root.left), self.maxDepth_recursion(root.right)
+        )
 
-        queue = [root]
+    def maxDepth(self, root: TreeNode):
+        """нахождение максимальной глубины DFS через список и цикл"""
+
+        queue = [(root, 1)]
+
+        max_depth = 0
 
         while queue:
-            node = queue.pop(-1)
+            node, depth = queue.pop(-1)
 
-            queue.append(node.right)
+            right = node.right
+            left = node.left
+
+            max_depth = depth if depth > max_depth else max_depth
+
+            if right:
+                queue.append((right, depth + 1))
+            if left:
+                queue.append((left, depth + 1))
 
 
 if __name__ == "__main__":
