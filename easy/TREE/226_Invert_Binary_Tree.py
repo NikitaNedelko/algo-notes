@@ -73,11 +73,13 @@ class BinaryTree(object):
                     current = current.left
                 else:
                     current.left = new_node
+                    return
             else:
                 if current.right:
                     current = current.right
                 else:
                     current.right = new_node
+                    return
 
     def delete_rec(self, val: int):
         """Удаление значения через рекурсию"""
