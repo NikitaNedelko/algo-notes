@@ -27,13 +27,12 @@ class RecentUserCounter(object):
             current_user_id = self.queue[0][0]
             self.dict[current_user_id] -= 1
             self.queue.popleft()
+            if (
+                self.dict[current_user_id] == 0
+            ):  # Чтобы не накапливать мертвых пользователей
+                del self.dict[current_user_id]
 
         self.queue.append([user_id, t])
 
     def get_active_users(self, x: int):
-        ans: list[int] = []
-        for user_id, _ in self.dict.items():
-            if self.dict[user_id] >= x:
-                ans.append(user_id)
-
         return [user_id for user_id, _ in self.dict.items() if self.dict[user_id] >= x]
