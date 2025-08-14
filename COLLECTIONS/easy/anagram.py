@@ -34,6 +34,16 @@ class Solution(object):
                 return False
         return True
 
+        # второй вариант
+
+        s = input().strip()
+        l = input().strip()
+
+        print(Counter(s))
+        print(Counter(l))
+
+        return True if Counter(s) == Counter(l) else False
+
 
 if __name__ == "__main__":
     solution = Solution()

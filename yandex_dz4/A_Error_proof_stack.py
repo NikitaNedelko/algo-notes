@@ -4,6 +4,7 @@
 Затрачено памяти: O(N)
 """
 
+import sys
 from collections import deque
 from typing import Union, Callable, Dict
 
@@ -54,9 +55,8 @@ def main():
         "clear": stack.clear,
     }
 
-    while True:
-
-        cmd = input().split()
+    for line in sys.stdin:
+        cmd = line.strip().split()
 
         do = cmd[0]
 

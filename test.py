@@ -1,2 +1,2 @@
-a = ""
-print(int(a))
+for _ in range(4):
+    print(1)

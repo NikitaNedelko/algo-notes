@@ -15,15 +15,13 @@ class Solution(object):
         :rtype: List[int]
         """
 
-        numDic = {}  # O(n) по памяти
+        is_seen: dict[int, int] = {}
 
-        n = len(nums)
-
-        for first_id in range(n):  # O(n) по времени
-            second = target - nums[first_id]
-            if second in numDic:  # O(1) по времени
-                return [first_id, numDic[second]]
-            numDic[nums[first_id]] = first_id  # O(1) по времени
+        for id_first, num_first in enumerate(nums):
+            second = target - num_first
+            if second in is_seen:  # O(1) по времени,НО O(n) если in is_seen.items()
+                return [is_seen[second], id_first]
+            is_seen[num_first] = id_first
 
         return []
 
