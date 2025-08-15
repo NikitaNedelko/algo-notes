@@ -9,6 +9,37 @@ def multiplyRLE(
 ) -> list[list[int]]:
     answer: list[list[int]] = []
 
+    i = j = 0
+    v1 = v2 = 0
+    c1 = c2 = 0
+
+    while i < len(encoded1) or j < len(encoded2):
+        if c1 == 0:
+            v1, c1 = encoded1[i]
+            i += 1
+        if c2 == 0:
+            v2, c2 = encoded2[j]
+            j += 1
+
+        current_c = min(c1, c2)
+        product = v1 * v2
+
+        if answer and answer[-1][0] == product:
+            answer[-1][1] += current_c
+        else:
+            answer.append([product, current_c])
+
+        c1 -= current_c
+        c2 -= current_c
+
+    return answer
+
+
+def multiplyRLE2(
+    encoded1: list[list[int]], encoded2: list[list[int]]
+) -> list[list[int]]:
+    answer: list[list[int]] = []
+
     first_count = 0
     second_count = 0
 
