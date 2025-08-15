@@ -26,22 +26,16 @@
 def main(cords: list[list[int]]):
     """Точка входа в программу"""
 
-    cords_set: set[tuple[int, int]] = set()  # O(N) по памяти
+    set_cords = set(map(tuple, cords))
 
-    min_x = float("inf")
-    max_x = float("-inf")
+    min_x = min(x for x, _ in set_cords)
+    max_x = max(x for x, _ in set_cords)
 
-    for x, y in cords:  # O(N) по времени
-        max_x = x if x > max_x else max_x
-        min_x = x if x < min_x else min_x
-        cords_set.add((x, y))
+    middle_x = min_x + max_x
 
-    middle_x = (max_x + min_x) / 2
-
-    for x, y in cords_set:  # O(N) по времени
-        opposite_x = middle_x - x + middle_x
-        opposite_y = y
-        if (opposite_x, opposite_y) not in cords_set:
+    for x, y in cords:
+        opposite_x = middle_x - x
+        if (opposite_x, y) not in set_cords:
             return False
 
     return True
