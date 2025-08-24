@@ -1,46 +1,42 @@
-"""356. Line Reflection
+import sys
 
-Условие:
-Дано множество точек на плоскости. Нужно определить, существует ли вертикальная прямая x = k, относительно которой всё множество симметрично.
+# sys.stdin.readline / sys.stdout.write — быстрый I/O без лишнего форматирования
+input = sys.stdin.readline
+write = sys.stdout.write
 
-Входные данные:
-
-Массив points, где каждая точка представлена как список из двух целых чисел [x, y].
-
-Размер массива до 10⁴ точек.
-
-Координаты точек по модулю не превышают 10⁴.
-
-Выходные данные:
-
-Вернуть True, если существует такая прямая симметрии.
-
-Вернуть False, если не существует.
+MOD = 1_000_000_007
 
 
-Скорость работы: O(2*N)
-Затрачено памяти: O(N)
-"""
+def main():
+    n, k = map(int, input().split())
 
+    N = k + n
+    C = [[0] * (k + n + 1) for _ in range(k + n + 1)]
+    for i in range(N + 1):
+        C[i][0] = C[i][i] = 1
+        for j in range(1, i):
+            C[i][j] = (C[i - 1][j - 1] + C[i - 1][j]) % MOD
 
-def main(cords: list[list[int]]):
-    """Точка входа в программу"""
+    dp = [0] * (n + 1)
+    dp[0] = 1
 
-    set_cords = set(map(tuple, cords))
+    for v in range(1, n + 1):
+        ndp = dp[:]
+        max_t = n // v
+        for s in range(0, n + 1):
+            if dp[s] == 0:
+                continue
+            base = dp[s]
+            for t in range(1, max_t + 1):
+                s2 = s + t * v
+                if s2 > n:
+                    break
+                ways = C[k + t - 1][t]
+                ndp[s2] = (ndp[s2] + base * ways) % MOD
+        dp = ndp
 
-    min_x = min(x for x, _ in set_cords)
-    max_x = max(x for x, _ in set_cords)
-
-    middle_x = min_x + max_x
-
-    for x, y in cords:
-        opposite_x = middle_x - x
-        if (opposite_x, y) not in set_cords:
-            return False
-
-    return True
+    write(str(dp[n]) + "\n")
 
 
 if __name__ == "__main__":
-    print(main([[1, 1], [3, 1], [2, 1]]))
-    print(main([[1, 1], [2, 1], [1, 2], [2, 2]]))
+    main()
