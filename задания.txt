@@ -1,0 +1,79 @@
+
+Название	Принятие	Уровень
+Line Reflection	                                            COLLECTIONS\easy\356_Line_Reflection.py
+Longest Subarray of 1’s After Deleting One Element  60.00%	COLLECTIONS\easy\1493_Longest_Subarray_of_1s_After_Deleting_One_Element.py
+Summary Ranges	                                    44.50%	COLLECTIONS\two_pointers\228_Summary_Ranges.py
+String Compression	                                46.90%  COLLECTIONS\strs\443_String_Compression.py
+Zigzag Iterator	                                    61.00%	COLLECTIONS\two_pointers\281_Zigzag_Iterator.py
+Valid Palindrome	                                40.70%	COLLECTIONS\two_pointers\125_Valid_Palindrome.py
+One Edit Distance	33.80%	Medium
+Subarray Sum Equals K	43.80%	Medium
+Move Zeroes	60.10%	Easy
+Group Anagrams	63.20%	Medium
+Insert Delete GetRandom O(1)	51.00%	Medium
+LRU Cache	39.10%	Medium
+Generate Parentheses	69.20%	Medium
+Reverse Linked List	69.20%	Easy
+Permutation in String	44.10%	Medium
+Merge k Sorted Lists	45.80%	Hard
+Number of Recent Calls	73.00%	Easy
+Valid Parentheses	40.60%	Easy
+Max Consecutive Ones II	48.60%	Medium
+Maximize Distance to Closest Person	47.40%	Medium
+Design Hit Counter	66.90%	Medium
+Merge Intervals	44.20%	Medium
+Trapping Rain Water	55.40%	Hard
+Two Sum	48.20%	Easy
+Meeting Rooms II	49.10%	Medium
+Find All Anagrams in a String	47.10%	Medium
+Implement Rand10() Using Rand7()	46.60%	Medium
+Symmetric Tree	50.90%	Easy
+Longest Substring Without Repeating Characters	32.70%	Medium
+Validate Binary Search Tree	30.10%	Medium
+Number of Islands	52.90%	Medium
+Flatten Nested List Iterator	58.00%	Medium
+Consecutive Characters	62.00%	Easy
+Interval List Intersections	70.70%	Medium
+Implement Queue using Stacks	56.60%	Easy
+Add Two Numbers	37.70%	Medium
+Merge Sorted Array	43.00%	Easy
+Merge Two Sorted Lists	59.10%	Easy
+Max Consecutive Ones III	62.30%	Medium
+Longest Palindromic Substring	31.60%	Medium
+Jewels and Stones	87.50%	Easy
+Lowest Common Ancestor of a Binary Tree	54.00%	Medium
+Intersection of Two Arrays II	54.40%	Easy
+Missing Number	58.50%	Easy
+Evaluate Reverse Polish Notation	41.40%	Medium
+Median of Two Sorted Arrays	33.50%	Hard
+Simplify Path	37.20%	Medium
+Is Subsequence	50.10%	Easy
+Squares of a Sorted Array	71.50%	Easy
+Remove Nth Node From End of List	37.70%	Medium
+Perfect Squares	51.50%	Medium
+Max Stack	44.70%	Easy
+Lowest Common Ancestor of a Binary Tree III	77.50%	Medium
+Longest Substring with At Most Two Distinct Characters	52.20%	Medium
+Maximal Rectangle	42.10%	Hard
+Search in Rotated Sorted Array	37.30%	Medium
+Two Sum II – Input Array Is Sorted	58.00%	Easy
+Remove Duplicates from Sorted Array	48.10%	Easy
+Find Minimum in Rotated Sorted Array	47.60%	Medium
+Range Sum of BST	84.70%	Easy
+Partition Labels	78.60%	Medium
+Product of Array Except Self	63.40%	Medium
+Binary Tree Maximum Path Sum	37.20%	Hard
+Continuous Subarray Sum	26.70%	Medium
+Reverse Words in a String III	77.20%	Easy
+Add Strings	51.50%	Easy
+Palindrome Linked List	45.50%	Easy
+First Unique Character in a String	56.40%	Easy
+
+которая у меня была на ивент                            COLLECTIONS\queue_Sliding_window\HARD_933.py
+https://leetcode.com/problems/one-edit-distance/        
+https://coderun.yandex.ru/problem/sum-of-numbers 
+https://leetcode.com/problems/move-zeroes/              
+https://leetcode.com/problems/find-the-prefix-common-array-of-two-arrays/description/
+https://leetcode.com/problems/remove-all-occurrences-of-a-substring/description/
+https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/description/
+"удалить все смайлики вида :-)))) или :-))( с произвольным количеством скобок"
