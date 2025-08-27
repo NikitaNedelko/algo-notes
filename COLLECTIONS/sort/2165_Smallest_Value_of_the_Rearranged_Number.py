@@ -1,19 +1,28 @@
 import sys
 
 input = sys.stdin.readline
+write = sys.stdout.write
 
 
-# ! Через частоту каждой цифры
 def main():
-    num = sorted(input().strip())
-    not_zero_id = 0
-    if num[0] == "0":
-        for id, n in enumerate(num):
-            if n != "0":
-                not_zero_id = id
-                break
-    num[not_zero_id], num[0] = num[0], num[not_zero_id]
-    print("".join(num))
+    s = input().strip()
+    freq = [0] * 10
+
+    for ch in s:
+        freq[ord(ch) - 48] += 1
+
+    res: list[str] = []
+    for i in range(1, 10):
+        if freq[i]:
+            res.append(str(i))
+            freq[i] -= 1
+            break
+
+    for i in range(10):
+        if freq[i]:
+            res.extend([str(i) * freq[i]])
+
+    write("".join(res))
 
 
 if __name__ == "__main__":
